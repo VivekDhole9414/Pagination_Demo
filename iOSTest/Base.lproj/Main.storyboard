@@ -36,15 +36,24 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostTableViewCell" rowHeight="69" id="yfc-ZG-2i3" customClass="PostTableViewCell" customModule="iOSTest" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="69"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostTableViewCell" rowHeight="115" id="yfc-ZG-2i3" customClass="PostTableViewCell" customModule="iOSTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yfc-ZG-2i3" id="rwb-cj-ffA">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="69"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="115"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFw-ho-0rt">
+                                                    <rect key="frame" x="8" y="12" width="377" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="w93-5k-uVW"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0d-Rg-Lmj">
-                                                    <rect key="frame" x="8" y="8" width="377" height="53"/>
+                                                    <rect key="frame" x="8" y="45" width="377" height="58"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="53" id="9Ai-uV-1GA"/>
                                                     </constraints>
@@ -54,13 +63,17 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="g0d-Rg-Lmj" secondAttribute="bottom" constant="8" id="Pcl-pA-Wfj"/>
+                                                <constraint firstItem="zFw-ho-0rt" firstAttribute="leading" secondItem="rwb-cj-ffA" secondAttribute="leading" constant="8" id="Ffr-dm-uBQ"/>
+                                                <constraint firstItem="zFw-ho-0rt" firstAttribute="top" secondItem="rwb-cj-ffA" secondAttribute="top" constant="12" id="L6V-I4-ZFa"/>
+                                                <constraint firstItem="g0d-Rg-Lmj" firstAttribute="top" secondItem="zFw-ho-0rt" secondAttribute="bottom" constant="12" id="PDK-sy-jSV"/>
+                                                <constraint firstAttribute="trailing" secondItem="zFw-ho-0rt" secondAttribute="trailing" constant="8" id="Q3C-lu-uq4"/>
                                                 <constraint firstAttribute="trailing" secondItem="g0d-Rg-Lmj" secondAttribute="trailing" constant="8" id="UzM-SY-Evp"/>
-                                                <constraint firstItem="g0d-Rg-Lmj" firstAttribute="top" secondItem="rwb-cj-ffA" secondAttribute="top" constant="8" id="ejl-qC-Pf5"/>
+                                                <constraint firstAttribute="bottom" secondItem="g0d-Rg-Lmj" secondAttribute="bottom" constant="12" id="nHl-vB-kct"/>
                                                 <constraint firstItem="g0d-Rg-Lmj" firstAttribute="leading" secondItem="rwb-cj-ffA" secondAttribute="leading" constant="8" id="ov9-Vc-uhd"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="postIdLabel" destination="zFw-ho-0rt" id="Afi-Fs-Gqq"/>
                                             <outlet property="postLabel" destination="g0d-Rg-Lmj" id="nAn-bN-Ufh"/>
                                         </connections>
                                     </tableViewCell>
@@ -87,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EuJ-JH-QRy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-445" y="-169"/>
+            <point key="canvasLocation" x="-445.03816793893128" y="-169.01408450704227"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="6Bc-nR-zgW">

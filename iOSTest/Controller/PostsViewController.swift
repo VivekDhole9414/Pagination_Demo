@@ -49,22 +49,14 @@ extension PostsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell", for: indexPath) as! PostTableViewCell
         let post = viewModel.post(at: indexPath.row)
-        cell.postLabel?.text = "\(post.id): \(post.title)"
-        
-        // Perform heavy computation using the cache
+        cell.postLabel?.text = "Post Title: \(post.title)"
+        cell.postIdLabel?.text = "Post ID: \(post.id))"
         DispatchQueue.global().async {
             let startTime = Date()
             let details = ComputationCache.shared.getDetails(for: post)
             let endTime = Date()
             let timeInterval = endTime.timeIntervalSince(startTime)
-            print("Heavy computation time for post \(post.id): \(timeInterval) seconds")
-            
-            DispatchQueue.main.async {
-                // Ensure the cell is still displaying the same post before updating
-                if let currentCell = tableView.cellForRow(at: indexPath), currentCell.textLabel?.text == "\(post.id): \(post.title)" {
-                    currentCell.detailTextLabel?.text = details
-                }
-            }
+            print("computation time for post \(post.id): \(timeInterval) seconds")
         }
         
         return cell

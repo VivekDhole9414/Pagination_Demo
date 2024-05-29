@@ -9,7 +9,7 @@ import Foundation
 class ComputationCache {
     static let shared = ComputationCache()
     private var cache = [Int: String]()
-    private let queue = DispatchQueue(label: "com.example.ComputationCacheQueue")
+    private let queue = DispatchQueue(label: "com.data.ComputationCacheQueue")
     
     func getDetails(for post: Post) -> String {
         return queue.sync {
@@ -24,8 +24,7 @@ class ComputationCache {
     }
     
     private func performHeavyComputation(for post: Post) -> String {
-        // Simulate a heavy computation process by blocking the current thread
-        sleep(2)
+       sleep(2)
         return "Details for post \(post.id)"
     }
 }
